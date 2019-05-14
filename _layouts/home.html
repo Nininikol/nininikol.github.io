@@ -10,3 +10,20 @@ layout: default
     </header>
   </article>
 {% endfor %}
+
+<!--
+{% if paginator.total_pages > 1 %}
+  <div class="pagination">
+    {% if paginator.previous_page %}
+      <div class="prev">
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}">← Позднее</a>
+      </div>
+    {% endif %}
+    {% if paginator.next_page %}
+      <div class="next">
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl }}">Ранее →</a>
+      </div>
+    {% endif %}
+  </div>
+{% endif %}
+-->

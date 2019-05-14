@@ -1,49 +1,39 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: Your awesome title
-email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+title: 'Блог Анатолия Гуляева'
+author: 'Анатолий Гуляев'
+keywords: 'kaneru, блог, продуктивность, лайфлист, программирование, фронт-енд'
+description: > # this means to ignore newlines until "note:"
+  Блог Анатолия Гуляева.
+  Тут в основном пишу свои наблюдения и заметки про программирование, фронт-енд, продуктивность и свою жизнь.
+## note:
+#  use site.path in your templates to make it work for both protocols e.g. http and https
+#  use site.url only inside the web feed template (e.g. requires full url incl. protocol)
 path: ''
-url: "https://nininikol.github.io"
-
+url:  'https://kaneru.me'
 
 permalink: :title/
 
-# Build settings
 markdown: kramdown
-theme: minima
-plugins:
-  - jekyll-feed
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    disable: true
+
+pagination:
+  enabled: true
+  collection: 'posts'
+  per_page: 5
+  permalink: '/page/:num/'
+  sort_field: 'date'
+  sort_reverse: true
+
+exclude:
+- README.md
 
 safe: true
 lsi: false
 
 include: [_pages]
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+plugins: [rouge, jekyll-sitemap, jekyll-feed, jekyll-paginate-v2]
+
+future: true
